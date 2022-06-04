@@ -13,23 +13,23 @@
       </div>
 
       <div>
-        <span v-permission="['editor']" class="permission-alert">
+        <span v-permission="['worker']" class="permission-alert">
           Only
-          <el-tag class="permission-tag" size="small">editor</el-tag> can see this
+          <el-tag class="permission-tag" size="small">worker</el-tag> can see this
         </span>
-        <el-tag v-permission="['editor']" class="permission-sourceCode" type="info">
-          v-permission="['editor']"
+        <el-tag v-permission="['worker']" class="permission-sourceCode" type="info">
+          v-permission="['worker']"
         </el-tag>
       </div>
 
       <div>
-        <span v-permission="['admin','editor']" class="permission-alert">
+        <span v-permission="['admin','worker']" class="permission-alert">
           Both
           <el-tag class="permission-tag" size="small">admin</el-tag> and
           <el-tag class="permission-tag" size="small">editor</el-tag> can see this
         </span>
-        <el-tag v-permission="['admin','editor']" class="permission-sourceCode" type="info">
-          v-permission="['admin','editor']"
+        <el-tag v-permission="['admin','worker']" class="permission-sourceCode" type="info">
+          v-permission="['admin','worker']"
         </el-tag>
       </div>
     </div>
@@ -48,17 +48,17 @@
           </el-tag>
         </el-tab-pane>
 
-        <el-tab-pane v-if="checkPermission(['editor'])" label="Editor">
+        <el-tab-pane v-if="checkPermission(['worker'])" label="worker">
           Editor can see this
           <el-tag class="permission-sourceCode" type="info">
-            v-if="checkPermission(['editor'])"
+            v-if="checkPermission(['worker'])"
           </el-tag>
         </el-tab-pane>
 
-        <el-tab-pane v-if="checkPermission(['admin','editor'])" label="Admin-OR-Editor">
-          Both admin or editor can see this
+        <el-tab-pane v-if="checkPermission(['admin','worker'])" label="Admin-OR-worker">
+          Both admin or worker can see this
           <el-tag class="permission-sourceCode" type="info">
-            v-if="checkPermission(['admin','editor'])"
+            v-if="checkPermission(['admin','worker'])"
           </el-tag>
         </el-tab-pane>
       </el-tabs>

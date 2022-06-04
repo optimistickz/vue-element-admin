@@ -8,33 +8,33 @@ const tableRouter = {
   redirect: '/table/complex-table',
   name: 'Table',
   meta: {
-    title: 'Table',
+    title: '审计表格',
     icon: 'table'
   },
   children: [
     {
-      path: 'dynamic-table',
-      component: () => import('@/views/table/dynamic-table/index'),
-      name: 'DynamicTable',
-      meta: { title: 'Dynamic Table' }
+      path: 'callinfo-table',
+      component: () => import('@/views/table/callinfo-table'),
+      name: 'ComplexTable1',
+      meta: { title: '接口调用审计表', 'icon': 'el-icon-menu' }
     },
     {
-      path: 'drag-table',
-      component: () => import('@/views/table/drag-table'),
-      name: 'DragTable',
-      meta: { title: 'Drag Table' }
+      path: 'datachange-table/:traceId',
+      component: () => import('@/views/table/datachange-table'),
+      name: 'ComplexTable2',
+      meta: { title: '数据变化', 'icon': 'el-icon-info', roles: ['worker'] }
     },
     {
-      path: 'inline-edit-table',
-      component: () => import('@/views/table/inline-edit-table'),
-      name: 'InlineEditTable',
-      meta: { title: 'Inline Edit' }
+      path: 'limitevent-table',
+      component: () => import('@/views/table/limitevent-table'),
+      name: 'ComplexTable3',
+      meta: { title: '高频调用', 'icon': 'el-icon-question' }
     },
     {
-      path: 'complex-table',
-      component: () => import('@/views/table/complex-table'),
-      name: 'ComplexTable',
-      meta: { title: 'Complex Table' }
+      path: 'tabevent-table',
+      component: () => import('@/views/table/limitevent-table'),
+      name: 'ComplexTable8',
+      meta: { title: '数据告警变更', 'icon': 'el-icon-warning' }
     }
   ]
 }
